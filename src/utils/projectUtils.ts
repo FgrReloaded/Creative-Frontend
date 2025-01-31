@@ -9,7 +9,7 @@ export const generateProjectCards = (projects: string[], options: Options) => {
 
   return projects
     .map(project => `
-      <a href="/projects/${project}"
+      <a target="_blank" href="/projects/${project}"
          class="${cardClass} bg-gray-800 rounded-lg overflow-hidden hover:transform hover:translate-y-[-10px] transition-transform duration-300">
         <div class="p-6">
           <h2 class="${titleClass}">${project}</h2>
