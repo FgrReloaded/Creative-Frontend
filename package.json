@@ -1,6 +1,7 @@
 {
-  "name": "Creative-Frontend",
+  "name": "creative-frontend",
   "scripts": {
+    "start": "bun run src/index.ts",
     "dev": "bun run --hot src/index.ts"
   },
   "dependencies": {

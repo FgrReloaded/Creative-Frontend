@@ -28,7 +28,9 @@ app.get('/', async (c) => {
 
 });
 
+const port = process.env.PORT || 3000
+
 export default {
-  port: 3000,
+  port,
   fetch: app.fetch,
 }
