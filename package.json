@@ -2,6 +2,7 @@
   "name": "creative-frontend",
   "scripts": {
     "start": "bun run src/index.ts",
+    "build": "npm i bun",
     "dev": "bun run --hot src/index.ts"
   },
   "dependencies": {
