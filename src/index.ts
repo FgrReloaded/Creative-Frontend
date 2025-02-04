@@ -17,10 +17,7 @@ app.get('/', async (c) => {
 
   const template = await Bun.file('./src/templates/index.html').text()
 
-  const projectsHtml = generateProjectCards(projectList, {
-    cardClass: 'card',
-    titleClass: 'text-xl font-bold mb-2',
-  })
+  const projectsHtml = generateProjectCards(projectList)
 
   const html = template.replace('{{PROJECTS}}', projectsHtml)
 

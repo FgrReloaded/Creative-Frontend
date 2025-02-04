@@ -1,87 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Creative Project Showcase</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     .gradient-bg {
-      background: linear-gradient(135deg, #6EE7B7, #3B82F6, #9333EA);
-      background-size: 300% 300%;
-      animation: gradient-animation 6s ease infinite;
+      background: linear-gradient(135deg, #302a2a 0%, #292626 50%, #2b3139 100%);
+      background-size: 200% 200%;
+      animation: gradient-animation 12s ease infinite;
     }
 
     @keyframes gradient-animation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .card-hover:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
     }
 
-    .transition-all {
-      transition: all 0.3s ease-in-out;
+    .image-hover {
+      transition: transform 0.4s ease;
+      overflow: hidden;
+    }
+
+    .card-hover:hover .image-hover {
+      transform: scale(1.05);
+    }
+
+    .shine-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shine-effect::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.1) 50%,
+          rgba(255, 255, 255, 0) 100%);
+      transform: rotate(30deg);
+      animation: shine 6s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        left: -50%;
+      }
+
+      100% {
+        left: 150%;
+      }
     }
   </style>
 </head>
-<body class="font-sans text-gray-800">
 
-  <header class="gradient-bg text-white py-8">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-5xl font-bold mb-4">Creative Project Showcase</h1>
-      <p class="text-xl">Explore our latest creative works and innovative projects.</p>
-    </div>
-  </header>
-  {{PROJECTS}}
-  <section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Featured Projects</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="card-hover transition-all rounded-lg overflow-hidden shadow-lg bg-white">
-          <img src="/assets/images/proj.jpg" alt="Project 1" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Project Title 1</h3>
-            <p class="text-gray-600">A brief description of the project goes here. Highlight its key features and purpose.</p>
-            <a href="#" class="mt-4 inline-block text-blue-600 hover:text-blue-800">View Details →</a>
-          </div>
-        </div>
-        <div class="card-hover transition-all rounded-lg overflow-hidden shadow-lg bg-white">
-          <img src="/assets/images/proj.jpg" alt="Project 2" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Project Title 2</h3>
-            <p class="text-gray-600">A brief description of the project goes here. Highlight its key features and purpose.</p>
-            <a href="#" class="mt-4 inline-block text-blue-600 hover:text-blue-800">View Details →</a>
-          </div>
-        </div>
-        <div class="card-hover transition-all rounded-lg overflow-hidden shadow-lg bg-white">
-          <img src="/assets/images/proj.jpg" alt="Project 3" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Project Title 3</h3>
-            <p class="text-gray-600">A brief description of the project goes here. Highlight its key features and purpose.</p>
-            <a href="#" class="mt-4 inline-block text-blue-600 hover:text-blue-800">View Details →</a>
-          </div>
+<body class="font-['Raleway'] bg-gray-50">
+  <header class="gradient-bg text-white relative overflow-hidden">
+    <div class="container mx-auto px-4 py-24 text-center">
+      <div class="max-w-3xl mx-auto relative z-10">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-200 to-pink-200">
+            Innovative Creations
+          </span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-100 font-light mb-8">
+          Where Imagination Meets Digital Reality
+        </p>
+        <div class="shine-effect inline-block rounded-full">
+          <button
+            class="bg-white/10 backdrop-blur-lg px-8 py-3 rounded-full font-medium hover:bg-white/20 transition-all">
+            Explore Innovations
+          </button>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section class="gradient-bg text-white py-16">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-4xl font-bold mb-4">Want to Collaborate?</h2>
-      <p class="text-xl mb-8">Let's work together to create something amazing!</p>
-      <a href="#" class="inline-block bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-600 hover:text-white transition-all">Contact Us</a>
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+        <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          Featured Websites
+        </span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{PROJECTS}}
+      </div>
     </div>
   </section>
-
-  <footer class="bg-gray-800 text-white py-8">
-    <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2023 Creative Project Showcase. All rights reserved.</p>
-    </div>
-  </footer>
-
 </body>
+
 </html>

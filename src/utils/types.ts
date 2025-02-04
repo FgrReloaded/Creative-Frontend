@@ -1,4 +1,4 @@
 export interface Options {
-  cardClass: string;
-  titleClass: string;
+  cardClass?: string;
+  titleClass?: string;
 }
