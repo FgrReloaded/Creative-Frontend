@@ -1,0 +1,110 @@
+/* Styling Below */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1C1C1C;
+    position: relative;
+    cursor: none;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    color: #D9DAD7;
+    font-family: 'Playfair Display', serif;
+    user-select: none;
+}
+
+.cursor {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    background: #3f6e95;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: all 0.1s ease;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 1rem;
+    z-index: 9998;
+    mix-blend-mode: difference;
+}
+
+.options {
+    display: flex;
+    padding-inline: 1rem;
+    justify-content: space-between;
+}
+
+.title h1 {
+    text-align: center;
+    font-size: 13.5vw;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.list__type {
+    font-size: 1.2rem;
+}
+
+.list__type.non__active {
+    color: gray;
+}
+
+.hide__title {
+    color: gray;
+}
+
+/* Canvas */
+
+.canvas {
+    width: 300vw;
+    height: 150vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.image__card {
+    position: absolute;
+    width: 320px;
+    height: 440px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.image__card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.image__card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.image__card:hover img {
+    transform: scale(1.05);
+}
