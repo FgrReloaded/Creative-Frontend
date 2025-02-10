@@ -28,7 +28,7 @@ const projects = [
     title: "TEDxGLAU",
     description: "Website for TEDx event",
     thumbnail: "./projects/tedxglau/thumbnail.png",
-    path: "tedxglau.com",
+    path: "https://www.tedxglau.com",
     technologies: ["Next.js", "Tailwind CSS", "Frame Motion", "Aceternity UI"],
   },
 ];

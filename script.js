@@ -1,7 +1,7 @@
 function createProjectCards() {
-  const projectsGrid = document.querySelector('.project-lists');
+  const projectsGrid = document.querySelector(".project-lists");
 
-  projects.forEach(project => {
+  projects.forEach((project) => {
     const card = generateCard(project);
     projectsGrid.innerHTML += card;
   });
@@ -20,14 +20,17 @@ const generateCard = (project) => {
  <div class="p-6">
    <h3 class="text-xl font-bold mb-2">${project.title}</h3>
     <p class="text-gray-600 mb-4">${project.description}</p>
-    <div class="flex justify-start gap-4">
-    ${project.technologies.map(tech =>
-    `<span class="bg-gray-200/50  px-4 py-1 rounded-full">${tech}</span>`
-  ).join('')}
+    <div class="flex justify-center gap-4 flex-wrap ">
+    ${project.technologies
+      .map(
+        (tech) =>
+          `<span class="bg-gray-200/50 px-4 py-1 rounded-full">${tech}</span>`,
+      )
+      .join("")}
    </div>
  </div>
 </a>
 `;
-}
+};
 
-document.addEventListener('DOMContentLoaded', createProjectCards);
+document.addEventListener("DOMContentLoaded", createProjectCards);
