@@ -31,4 +31,12 @@ const projects = [
     path: "https://www.tedxglau.com",
     technologies: ["Next.js", "Tailwind CSS", "Frame Motion", "Aceternity UI"],
   },
+  {
+    id: "5",
+    title: "Literario Club",
+    description: "Website for college club",
+    thumbnail: "./projects/literario-club/thumbnail.png",
+    path: "https://literario.live",
+    technologies: ["HTML", "CSS", "JS", "GSAP"],
+  }
 ];
